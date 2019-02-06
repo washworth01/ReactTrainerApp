@@ -1,28 +1,52 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ReactDOM from 'react-dom';
+import Header from './header.js';
+import NavBar from './navbar.js'; 
+import TrainerForm from './trainerForm.js';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+  constructor() {
+    super ();
+    this.state ={
+      header: "New Trainer Form",
+      formField1: "Name",
+      formField2: "Email",
+      formField3: "Phone Number",
+      formField4: "Skill",
+      formResponse: " "
+    }
+    
+    this.updateState = (result) => {
+        if (result === "true"){
+          this.setState({
+            formResponse: "Trainer has been added"
+        })
+      }
+        else{
+          this.setState({
+           formResponse: "Form is incomplete!"
+          })
+        }
+      }
+    }
+  render(){
+    return(
+      <div>
+        <NavBar></NavBar>
+        <div>
+        <Header headerProp={this.state.header}></Header>
+        <TrainerForm
+        field1Prop={this.state.formField1}
+        field2Prop={this.state.formField2}
+        field3Prop={this.state.formField3}
+        field4Prop={this.state.formField4}
+        responseProp={this.state.formResponse}
+        updateResponse={this.updateState}>
+        </TrainerForm>
+        </div>
       </div>
     );
   }
 }
-
 export default App;

@@ -14,12 +14,82 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12px + 2vmin);
   color: white;
+}
+
+body {
+  background-color: rgba(187, 187, 233, 0.527);
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.Header h1 {
+  position: relative;
+  z-index: 1;
+  top: 15px;
+  padding-left: 60px;
+  border: 3px solid #282c34;
+}
+
+.Nav-Bar {
+
+}
+
+.Nav-Bar li {
+  display: inline-block;
+  position: relative;
+  left: -40px;
+  padding: 30px;
+  font-size: 20px;
+  border-right: 1px solid  #282c34;
+  border-block-end: 1px solid #282c34;
+  border-block-start: 1px solid #282c34;
+  border-left: 1px solid #282c34;
+  background-color: blanchedalmond; 
+  text-decoration: none;
+}
+
+.Nav-Bar li:hover {
+  background-color:#6699ff; 
+}
+
+.Nav-Bar li:active {
+  background-color: #4CAF50;
+	color: white;
+}
+
+.Trainer-Form {
+  position: relative;
+  z-index: 2;
+  border: 3px solid #282c34;
+  height: 320px;
+}
+
+.Trainer-Form h2{
+  padding-left: 30px;
+}
+
+.Trainer-Form input[type=text] {
+  position: fixed;
+  padding: 8px;
+  float: right;
+  left: 400px;
+}
+
+.Trainer-Form button{
+ position: relative;
+ left: 150px; 
+ padding: 20px;
+ border-radius: 15px
+}
+
+.Trainer-Form p{
+  position: relative;
+  left: 400px;
+  top: -55px;
 }
 
 @keyframes App-logo-spin {
