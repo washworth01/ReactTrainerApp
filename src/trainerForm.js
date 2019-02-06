@@ -10,7 +10,7 @@ class TrainerForm extends Component {
             emailValue: '',
             phoneValue: '',
             skillValue: '',
-            isComplete: 'false'
+            trainers: []
         }
 
         this.nameHandleChange = (event) =>{
@@ -43,6 +43,18 @@ class TrainerForm extends Component {
             }
             else{
                     this.props.updateResponse("true");
+                    let trainers = this.state.trainers;
+                    trainers.push({
+                        id: trainers.length,
+                        name: this.state.nameValue,
+                        email: this.state.emailValue,
+                        phone: this.state.phoneValue,
+                        skill: this.state.skillValue
+                    })
+                    this.setState({
+                        trainers
+                    })
+                    console.log(trainers)
             }
         }
     }
